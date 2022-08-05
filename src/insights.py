@@ -102,7 +102,24 @@ def get_max_salary(path):
     int
         The maximum salary paid out of all job opportunities
     """
-    pass
+
+    all_jobs = read(path)
+
+    max_salary = set()
+
+    for jobs in all_jobs:
+        if jobs["max_salary"].isnumeric() is True:
+            max_salary.add(jobs["max_salary"])
+
+    super_salary = 0
+
+    max_salary_value = [int(val) for val in max_salary]
+
+    for salary in max_salary_value:
+        if salary > super_salary:
+            super_salary = salary
+
+    return super_salary
 
 
 def get_min_salary(path):
@@ -167,6 +184,5 @@ def filter_by_salary_range(jobs, salary):
     return []
 
 
-if __name__ == "__main__":
-    print(len(read("src/jobs.csv")))
-    print(get_unique_job_types("src/jobs.csv"))
+# if __name__ == "__main__":
+#     print(get_max_salary("src/jobs.csv"))

@@ -25,4 +25,4 @@ def read(path):
 
 
 # if __name__ == "__main__":
-#     print(len(read("src/jobs.csv")))
+#     print(read("src/jobs.csv"))
