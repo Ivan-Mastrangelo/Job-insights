@@ -64,7 +64,8 @@ def get_unique_industries(path):
     industry = set()
 
     for jobs in all_jobs:
-        industry.add(jobs["industry"])
+        if jobs["industry"] != "":
+            industry.add(jobs["industry"])
 
     return list(industry)
 
@@ -201,4 +202,5 @@ def filter_by_salary_range(jobs, salary):
 
 
 # if __name__ == "__main__":
+#     print(len(get_unique_industries("src/jobs.csv")))
 #     print(get_max_salary("src/jobs.csv"))
