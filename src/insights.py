@@ -221,10 +221,14 @@ def filter_by_salary_range(jobs, salary):
     list
         Jobs whose salary range contains `salary`
     """
-    return []
+    list_of_jobs = []
 
+    for job in jobs:
+        try:
+            if matches_salary_range(job, salary):
+                list_of_jobs.append(job)
 
-# if __name__ == "__main__":
-#     print(filter_by_job_type(jobs, "PART_TIME"))
-#     print(len(get_unique_industries("src/jobs.csv")))
-# print(get_max_salary("src/jobs.csv"))
+        except ValueError:
+            pass
+
+    return list_of_jobs
