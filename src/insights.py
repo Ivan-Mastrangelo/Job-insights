@@ -1,4 +1,5 @@
 from src.jobs import read
+# import sys
 
 
 def get_unique_job_types(path):
@@ -41,7 +42,13 @@ def filter_by_job_type(jobs, job_type):
     list
         List of jobs with provided job_type
     """
-    return []
+    list_of_jobs = []
+
+    for job in jobs:
+        if job["job_type"] == job_type:
+            list_of_jobs.append(job)
+
+    return list_of_jobs
 
 
 def get_unique_industries(path):
@@ -200,7 +207,7 @@ def filter_by_salary_range(jobs, salary):
     """
     return []
 
-
 # if __name__ == "__main__":
+#     print(filter_by_job_type(jobs, "PART_TIME"))
 #     print(len(get_unique_industries("src/jobs.csv")))
-#     print(get_max_salary("src/jobs.csv"))
+    # print(get_max_salary("src/jobs.csv"))
