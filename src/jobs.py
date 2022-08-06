@@ -22,7 +22,3 @@ def read(path):
         for jobs in jobs_reader:
             jobs_list.append(jobs)
         return jobs_list
-
-
-# if __name__ == "__main__":
-#     print(read("src/jobs.csv"))
