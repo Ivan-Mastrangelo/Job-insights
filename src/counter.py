@@ -5,5 +5,5 @@ def count_ocurrences(path, word):
     return word_count
 
 
-if __name__ == "__main__":
-    print(count_ocurrences("src/jobs.csv", "Python"))
+# if __name__ == "__main__":
+#     print(count_ocurrences("src/jobs.csv", "Python"))
